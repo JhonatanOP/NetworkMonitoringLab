@@ -16,8 +16,8 @@ Below is the topology used for this lab.  A monitoring server captures traffic f
 
 ## Tools
 
-- **Wireshark** – packet capture and analysis tool.  Enabling TCP sequence number analysis lets Wireshark detect events such as retransmissions, out‑of‑order packets and duplicate ACKs【167299352661465†L19-L37】.
-- **Grafana** – dashboard platform for visualising time‑series data.  When paired with a database like InfluxDB, Grafana can monitor network health, identify trends and detect issues in real time【470867998159299†L46-L49】.
+- **Wireshark** – packet capture and analysis tool.  Enabling TCP sequence number analysis lets Wireshark detect events such as retransmissions, out‑of‑order packets and duplicate ACKs.
+- **Grafana** – dashboard platform for visualising time‑series data.  When paired with a database like InfluxDB, Grafana can monitor network health, identify trends and detect issues in real time.
 - **InfluxDB/Netdata** – a time‑series database or monitoring agent to store network metrics for Grafana.
 
 ## Steps
@@ -35,14 +35,14 @@ Below is the topology used for this lab.  A monitoring server captures traffic f
 
 ### 3. Analyse the data
 
-1. Open the capture in Wireshark and enable **Analyse → TCP → Analyse Sequence Numbers** to allow Wireshark to flag retransmissions, out‑of‑order segments and duplicate ACKs【167299352661465†L19-L37】.
+1. Open the capture in Wireshark and enable **Analyse → TCP → Analyse Sequence Numbers** to allow Wireshark to flag retransmissions, out‑of‑order segments and duplicate ACKs.
 2. Identify the most common protocols in the capture.  Look for performance issues such as retransmissions, high latency, or duplicate acknowledgements.
 3. Conduct a security analysis: search for unusual patterns like port scans, unencrypted credentials or suspicious payloads.
 
 ### 4. Visualise metrics
 
 1. On the monitoring server, configure **InfluxDB** (or Netdata/Prometheus) to receive metrics from network interfaces or from the captured data.  For example, you can feed network throughput data into InfluxDB.
-2. In Grafana, create a dashboard that queries InfluxDB for network metrics (bytes per second, packets per second, etc.).  Grafana’s ability to visualise trends over time helps you quickly identify spikes and anomalies【470867998159299†L46-L49】.
+2. In Grafana, create a dashboard that queries InfluxDB for network metrics (bytes per second, packets per second, etc.).  Grafana’s ability to visualise trends over time helps you quickly identify spikes and anomalies.
 3. Use the sample throughput graph below as inspiration.  As you build dashboards, experiment with different visualisations (line charts, gauges, bar charts) to best represent your data.
 
 ![Network Throughput Graph](network_throughput_graph.png)
